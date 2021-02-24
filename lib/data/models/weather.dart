@@ -1,4 +1,4 @@
-import 'package:goodmeal/models/weather_response.dart';
+import 'package:goodmeal/data/models/weather_response.dart';
 import 'package:intl/intl.dart';
 
 enum PartOfDay { morning, day, evening, night }
