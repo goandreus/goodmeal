@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:goodmeal/data/models/weather.dart';
 import 'package:goodmeal/data/providers/weather_provider.dart';
 import 'package:goodmeal/pages/widget/bottom_row.dart';
+import 'package:goodmeal/pages/widget/graph/custom_graph.dart';
 import 'package:goodmeal/utils/colors.dart';
 import 'package:provider/provider.dart';
 
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                 Consumer<WeatherProvider>(builder: (context, provider, child) {
                   String hintText = provider.isWeatherAvailable
                       ? provider.weeklyWeather.city
-                      : "Enter you city ...";
+                      : "Ingresa tu ciudad ...";
                   return TextField(
                     textAlign: TextAlign.center,
                     textCapitalization: TextCapitalization.sentences,
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                       hintText: hintText,
                     ),
                     onSubmitted: (value) {
-                      print("entered city $value");
+                      print("entro $value");
                       provider.fetchWeatherAction(value);
                     },
                   );
@@ -59,7 +60,7 @@ class _HomePageState extends State<HomePage> {
             if (!provider.isWeatherAvailable)
               return Center(
                 child: Text(
-                  "I don't have any information yet!",
+                  "Aun no tengo informacion",
                   style: TextStyle(
                     color: CustomColors.gray,
                     fontSize: 20.0,
@@ -143,10 +144,10 @@ class _HomePageState extends State<HomePage> {
                             .round(),
                       ],
                       labelTexts: [
-                        "morning",
-                        "day",
-                        "evening",
-                        "night",
+                        "Mañana",
+                        "Dia",
+                        "Tarde",
+                        "Noche",
                       ],
                       labelImageUrls: [
                         provider.weeklyWeather.weather[0].weatherIconURL,
