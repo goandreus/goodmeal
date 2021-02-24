@@ -9,6 +9,6 @@ Future<WeeklyWeather> fetchWeeklyWeather(String cityName) async {
   if (response.statusCode == 200) {
     return WeeklyWeather.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception("Failed to fetch weather data for $cityName");
+    throw Exception("No se pudieron obtener los datos $cityName");
   }
 }
