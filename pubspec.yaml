@@ -13,10 +13,15 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.0
+  intl:
+  http:
+  provider: 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+    
+  
 
 flutter:
 
